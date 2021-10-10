@@ -12,20 +12,20 @@ function getNumber() {
       let x =  randomInteger(1, 100);
       console.log(x);
     function getRandomNumber () {
-        let randomNumber = +prompt('Угадай число от 1 до 100');
-        if(randomNumber > x) {
-            alert("Загаданное число меньше");
-            getRandomNumber();
-        }else if (randomNumber < x && randomNumber >= 1) {
-            alert("Загаданное число больше");
-            getRandomNumber();
+        let randomNumber = prompt('Угадай число от 1 до 100');
+        if (randomNumber === "" || randomNumber === null) {
+            alert("Игра окончена");
         }else if (!isNumber(randomNumber)) {
             alert("Введи число");
             getRandomNumber();
-        }else if (randomNumber == "" || randomNumber == null) {
-            alert("Игра окончена");
-        }else if (randomNumber == x) {
+        }else if (x === +randomNumber) {
             alert("Поздравляю, Вы угадали!!");
+        }else if (randomNumber > x) {
+            alert("Загаданное число меньше");
+            getRandomNumber();
+        }else if (randomNumber < x && randomNumber) {
+            alert("Загаданное число больше");
+            getRandomNumber();
         }
     }
     getRandomNumber();
