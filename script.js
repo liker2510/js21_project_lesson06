@@ -4,7 +4,13 @@ const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 }
 
-function getNumber(x) {
+function getNumber() {
+    function randomInteger(min, max) {
+        let rand = min + Math.random() * (max - min);
+        return Math.round(rand);
+      }
+      let x =  randomInteger(1, 100);
+      console.log(x);
     function getRandomNumber () {
         let randomNumber = +prompt('Угадай число от 1 до 100');
         if(randomNumber > x) {
@@ -24,4 +30,4 @@ function getNumber(x) {
     }
     getRandomNumber();
 }
-getNumber(25);
+getNumber();
