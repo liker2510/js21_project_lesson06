@@ -4,7 +4,7 @@ const isNumber = function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
 }
 
-const getNumber = function(x) {
+function getNumber(x) {
     function getRandomNumber () {
         let randomNumber = +prompt('Угадай число от 1 до 100');
         if(randomNumber > x) {
@@ -18,7 +18,7 @@ const getNumber = function(x) {
             getRandomNumber();
         }else if (randomNumber == "" || randomNumber == null) {
             alert("Игра окончена");
-        }else if (randomNumber == 25) {
+        }else if (randomNumber == x) {
             alert("Поздравляю, Вы угадали!!");
         }
     }
