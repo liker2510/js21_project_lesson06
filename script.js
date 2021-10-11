@@ -33,7 +33,7 @@ function getNumber() {
             alert("Загаданное число больше, осталось попыток " + attempts);
             --attempts;
             getRandomNumber();
-        }else if (+attempts === 1) {
+        }else if (0 === +attempts) {
             let b = confirm("Попытки закончились, хотите сыграть еще?");
             if(b === true) {
                 getNumber(); 
