@@ -11,7 +11,7 @@ function getNumber() {
       }
       let hiddenNumber =  randomInteger(1, 100);
       console.log(hiddenNumber);
-      let attempts = 9;
+      let attempts = 10;
       
     function getRandomNumber () {
         let randomNumber = prompt('Угадай число от 1 до 100');
@@ -25,15 +25,15 @@ function getNumber() {
             if(a === true) {
                 getNumber();
             }
-        }else if (randomNumber > hiddenNumber && attempts >= 1) {
+        }else if (randomNumber > hiddenNumber && attempts > 1) {
+            --attempts;
             alert("Загаданное число меньше, осталось попыток " + attempts);
-            --attempts;
             getRandomNumber();
-        }else if (randomNumber < hiddenNumber && attempts >= 1) {
+        }else if (randomNumber < hiddenNumber && attempts > 1) {
+            --attempts;
             alert("Загаданное число больше, осталось попыток " + attempts);
-            --attempts;
             getRandomNumber();
-        }else if (0 === +attempts) {
+        }else if (1 === +attempts) {
             let b = confirm("Попытки закончились, хотите сыграть еще?");
             if(b === true) {
                 getNumber(); 
